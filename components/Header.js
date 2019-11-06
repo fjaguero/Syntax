@@ -1,84 +1,21 @@
-import Subscribe from './Subscribe';
-import Link from 'next/link';
+import Link from "next/link";
 
 const Header = () => (
   <header className="header">
-    <div className="header__left">
-      <Link href="/">
-        <a aria-label="Syntax.FM">
-          <img className="header__logo" src="/static/logo.png" alt="Syntax" />
-        </a>
-      </Link>
+    <Link href="/">
+      <a aria-label="In Progress Show">
+        <img
+          className="header__logo"
+          src="/static/logo.jpg"
+          alt="In Progress Show Logo"
+        />
+      </a>
+    </Link>
+    <div className="title">
+      <h2 className="tagline">
+        A podcast where we look at how tech companies work from the inside.
+      </h2>
     </div>
-    <div className="header__right">
-      <div className="title">
-        <h2 className="tagline">A Tasty Treats Podcast for Web Developers.</h2>
-        <a
-          target="_blank"
-          href="https://docs.google.com/forms/d/e/1FAIpQLSfQlAo1wXHiJMySdU-h8QMtfoz92aMS9eycEHXB6eRCLh8KHA/viewform"
-          className="title__potluck-btn"
-          rel="noopener noreferrer"
-        >
-          Ask a Potluck Question →
-        </a>
-      </div>
-      <div className="people">
-        <div className="person">
-          <img src="/static/wes400x400.jpg" alt="Wes Bos" className="avatar" />
-          <h3>Wes Bos</h3>
-          <a
-            target="_blank"
-            href="https://twitter.com/wesbos"
-            className="person__social person__social--twitter"
-            rel="noopener noreferrer"
-          >
-            @wesbos
-          </a>
-          <p>
-            Full Stack JavaScript Developer. Creator of really good{' '}
-            <a
-              target="_blank"
-              href="https://wesbos.com/courses"
-              rel="noopener noreferrer"
-            >
-              web development courses
-            </a>
-            . BBQ enthusiast.
-          </p>
-        </div>
-
-        <div className="person">
-          <img
-            src="https://avatars2.githubusercontent.com/u/669383?s=460&v=4"
-            alt="Scott Tolinski"
-            className="avatar"
-            rel="noopener noreferrer"
-          />
-          <h3>Scott Tolinski</h3>
-          <a
-            target="_blank"
-            href="https://twitter.com/stolinski"
-            className="person__social person__social--twitter"
-            rel="noopener noreferrer"
-          >
-            @stolinski
-          </a>
-          <p>
-            Web Developer, Creator of{' '}
-            <a href="https://leveluptutorials.com/">Level Up Tuts</a>, Bboy,
-            Robotops Crew and{' '}
-            <a
-              target="_blank"
-              href="https://www.youtube.com/c/leveluptuts"
-              rel="noopener noreferrer"
-            >
-              Youtuber
-            </a>
-          </p>
-        </div>
-      </div>
-    </div>
-    <Subscribe />
   </header>
 );
 

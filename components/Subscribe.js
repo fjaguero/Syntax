@@ -1,10 +1,10 @@
-const Subscribe = props => (
+const Subscribe = () => (
   <div className="subscribe">
     <ul className="subscribe__links">
       <li className="subscribe__link subscribe__link--itunes">
         <a
           target="_blank"
-          href="https://itunes.apple.com/ca/podcast/syntax-tasty-web-development-treats/id1253186678?mt=2"
+          href="https://podcasts.apple.com/es/podcast/in-progress/id1464442500"
           rel="noopener noreferrer"
         >
           iTunes
@@ -13,7 +13,7 @@ const Subscribe = props => (
       <li className="subscribe__link subscribe__link--overcast">
         <a
           target="_blank"
-          href="https://overcast.fm/itunes1253186678/syntax-tasty-web-development-treats"
+          href="https://overcast.fm/itunes1464442500/in-progress-show"
           rel="noopener noreferrer"
         >
           Overcast
@@ -22,7 +22,7 @@ const Subscribe = props => (
       <li className="subscribe__link subscribe__link--google">
         <a
           target="_blank"
-          href="https://www.google.com/podcasts?feed=aHR0cHM6Ly9mZWVkLnN5bnRheC5mbS9yc3M%3D"
+          href="https://podcasts.google.com/?feed=aHR0cHM6Ly9hdWRpb2Jvb20uY29tL2NoYW5uZWxzLzQ5OTQzMjEucnNz"
           rel="noopener noreferrer"
         >
           Google Podcast
@@ -31,30 +31,30 @@ const Subscribe = props => (
       <li className="subscribe__link subscribe__link--stitcher">
         <a
           target="_blank"
-          href="http://www.stitcher.com/s?fid=142440&refid=stpr"
+          href="http://www.stitcher.com/s?fid=407637&refid=stpr"
           rel="noopener noreferrer"
         >
           Stitcher
         </a>
       </li>
       <li className="subscribe__link subscribe__link--pocketcasts">
-        <a target="_blank" href="http://pca.st/fmx9" rel="noopener noreferrer">
+        <a target="_blank" href="https://pca.st/5a61" rel="noopener noreferrer">
           PocketCasts
         </a>
       </li>
-      <li className="subscribe__link subscribe__link--googleplay">
+      <li className="subscribe__link subscribe__link--deezer">
         <a
           target="_blank"
-          href="https://playmusic.app.goo.gl/?ibi=com.google.PlayMusic&isi=691797987&ius=googleplaymusic&link=https://play.google.com/music/m/Ityd325x5s5ivr3fc74hvvgeztu?t%3DSyntax_-_Tasty_Web_Development_Treats%26pcampaignid%3DMKT-na-all-co-pr-mu-pod-16"
+          href="http://www.deezer.com/show/374462"
           rel="noopener noreferrer"
         >
-          Google Play
+          Deezer
         </a>
       </li>
       <li className="subscribe__link subscribe__link--spotify">
         <a
           target="_blank"
-          href="https://open.spotify.com/show/4kYCRYJ3yK5DQbP5tbfZby?si=bOe7-kl6RnOHapMsVnFWgw"
+          href="https://open.spotify.com/show/6en7vdLetXDLbUUD4OdIL6"
           rel="noopener noreferrer"
         >
           Spotify
@@ -63,7 +63,7 @@ const Subscribe = props => (
       <li className="subscribe__link subscribe__link--rss">
         <a
           target="_blank"
-          href="http://feed.syntax.fm/rss"
+          href="https://audioboom.com/channels/4994321.rss"
           rel="noopener noreferrer"
         >
           RSS

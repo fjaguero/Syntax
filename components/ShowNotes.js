@@ -1,8 +1,7 @@
-import React, {useEffect} from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect } from "react";
+import PropTypes from "prop-types";
 
 const ShowNotes = ({ show, setCurrentPlaying }) => {
-
   useEffect(() => {
     document.querySelector(".showNotes").scrollTop = 0;
   });
@@ -10,6 +9,10 @@ const ShowNotes = ({ show, setCurrentPlaying }) => {
   return (
     <div className="showNotes">
       <p className="show__date">{show.displayDate}</p>
+      <img
+        height="300"
+        src="https://images.theabcdn.com/i/35428855/600x600/c.png"
+      />
       <h2>{show.title}</h2>
       <button
         className="button"
@@ -36,7 +39,7 @@ const ShowNotes = ({ show, setCurrentPlaying }) => {
 
 ShowNotes.propTypes = {
   show: PropTypes.object.isRequired,
-  setCurrentPlaying: PropTypes.func.isRequired,
+  setCurrentPlaying: PropTypes.func.isRequired
 };
 
 export default ShowNotes;

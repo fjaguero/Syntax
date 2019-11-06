@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { FaPlay, FaPause } from 'react-icons/fa';
-import formatTime from '../lib/formatTime';
-import VolumeBars from './VolumeBars';
+import React from "react";
+import PropTypes from "prop-types";
+import { FaPlay, FaPause } from "react-icons/fa";
+import formatTime from "../lib/formatTime";
+import VolumeBars from "./VolumeBars";
 
 export default class Player extends React.Component {
   static propTypes = {
@@ -17,7 +17,7 @@ export default class Player extends React.Component {
     let lastPlaybackRate = 1;
 
     // for Server Side Rendering
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       const { show } = this.props;
       const lp = localStorage.getItem(`lastPlayed${show.number}`);
       const lastVolume = localStorage.getItem(`lastVolumeSetting`);
@@ -39,7 +39,7 @@ export default class Player extends React.Component {
       timeWasLoaded: lastPlayed !== 0,
       showTooltip: false,
       tooltipPosition: 0,
-      tooltipTime: '0:00'
+      tooltipTime: "0:00"
     };
   } // END Constructor
 
@@ -125,7 +125,7 @@ export default class Player extends React.Component {
 
   togglePlay = () => {
     const { playing } = this.state;
-    const method = playing ? 'pause' : 'play';
+    const method = playing ? "pause" : "play";
     this.audio[method]();
   };
 
@@ -146,8 +146,8 @@ export default class Player extends React.Component {
 
   playPause = () => {
     this.setState({ playing: !this.audio.paused });
-    const method = this.audio.paused ? 'add' : 'remove';
-    document.querySelector('.bars').classList[method]('bars--paused'); // 💩
+    const method = this.audio.paused ? "add" : "remove";
+    document.querySelector(".bars").classList[method]("bars--paused"); // 💩
   };
 
   volume = e => {
@@ -155,32 +155,6 @@ export default class Player extends React.Component {
     this.setState({
       currentVolume: `${e.currentTarget.value}`
     });
-  };
-
-  speedUp = () => {
-    this.speed(0.25);
-  };
-
-  speedDown = e => {
-    e.preventDefault();
-    this.speed(-0.25);
-  };
-
-  speed = change => {
-    const playbackRateMax = 2.5;
-    const playbackRateMin = 0.75;
-
-    let playbackRate = this.state.playbackRate + change;
-
-    if (playbackRate > playbackRateMax) {
-      playbackRate = playbackRateMin;
-    }
-
-    if (playbackRate < playbackRateMin) {
-      playbackRate = playbackRateMax;
-    }
-
-    this.setState({ playbackRate });
   };
 
   render() {
@@ -201,7 +175,7 @@ export default class Player extends React.Component {
         <div className="player__section player__section--left">
           <button
             onClick={this.togglePlay}
-            aria-label={playing ? 'pause' : 'play'}
+            aria-label={playing ? "pause" : "play"}
             type="button"
           >
             <p className="player__icon">{playing ? <FaPause /> : <FaPlay />}</p>
@@ -224,7 +198,6 @@ export default class Player extends React.Component {
             }}
             ref={x => (this.progress = x)}
           >
-
             {/* eslint-enable */}
 
             <div
@@ -239,7 +212,7 @@ export default class Player extends React.Component {
             className="player__tooltip"
             style={{
               left: `${tooltipPosition}px`,
-              opacity: `${showTooltip ? '1' : '0'}`
+              opacity: `${showTooltip ? "1" : "0"}`
             }}
           >
             {tooltipTime}
@@ -247,21 +220,10 @@ export default class Player extends React.Component {
         </div>
 
         <div className="player__section player__section--right">
-          <button
-            onClick={this.speedUp}
-            onContextMenu={this.speedDown}
-            className="player__speed"
-            type="button"
-          >
-            <p>FASTNESS</p>
-            <span className="player__speeddisplay">{playbackRate} &times;</span>
-          </button>
           <div className="player__volume">
             <p>LOUDNESS</p>
             <div className="player__inputs">
-
               <VolumeBars volume={this.volume} />
-
             </div>
           </div>
         </div>

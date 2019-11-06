@@ -1,20 +1,20 @@
-import { withRouter } from 'next/router';
-import React from 'react';
-import axios from 'axios';
-import PropTypes from 'prop-types';
-import ShowList from '../components/ShowList';
-import ShowNotes from '../components/ShowNotes';
-import Player from '../components/Player';
-import Meta from '../components/meta';
-import Page from '../components/Page';
-import getBaseURL from '../lib/getBaseURL';
+import { withRouter } from "next/router";
+import React from "react";
+import axios from "axios";
+import PropTypes from "prop-types";
+import ShowList from "../components/ShowList";
+import ShowNotes from "../components/ShowNotes";
+import Player from "../components/Player";
+import Meta from "../components/meta";
+import Page from "../components/Page";
+import getBaseURL from "../lib/getBaseURL";
 
 export default withRouter(
   class IndexPage extends React.Component {
     static propTypes = {
       router: PropTypes.object.isRequired,
       shows: PropTypes.array.isRequired,
-      baseURL: PropTypes.string.isRequired,
+      baseURL: PropTypes.string.isRequired
     };
 
     constructor(props) {
@@ -24,7 +24,7 @@ export default withRouter(
 
       this.state = {
         currentShow,
-        currentPlaying: currentShow,
+        currentPlaying: currentShow
       };
     }
 
@@ -41,8 +41,8 @@ export default withRouter(
       }
     }
 
-    setCurrentPlaying = (currentPlaying) => {
-      console.log('Setting current playing');
+    setCurrentPlaying = currentPlaying => {
+      console.log("Setting current playing");
       this.setState({ currentPlaying });
     };
 
@@ -62,8 +62,20 @@ export default withRouter(
         <Page>
           <Meta show={show} baseURL={baseURL} />
           <div className="wrapper">
+            <div
+              style={{
+                width: "100%",
+                height: "50px",
+                fontSize: "1.45rem",
+                margin: "20px 0",
+                padding: "10px",
+                color: "white"
+              }}
+            >
+              Filter by role
+            </div>
             <main className="show-wrap" id="main" tabIndex="-1">
-              <Player show={current} />
+              {/* <Player show={current} /> */}
               <ShowList
                 shows={shows}
                 currentShow={currentShow}
