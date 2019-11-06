@@ -22,12 +22,7 @@ export default class Show extends React.Component {
   render() {
     const { show, currentPlaying, currentShow, setCurrentPlaying } = this.props;
     return (
-      <div
-        className={`show ${
-          currentPlaying === show.displayNumber ? "show--playing" : ""
-        } ${currentShow === show.displayNumber ? "show--active" : ""}
-      `}
-      >
+      <div className="show">
         <a
           className="show__link"
           href={`/show/${show.displayNumber}/${slug(show.title)}`}
@@ -39,7 +34,7 @@ export default class Show extends React.Component {
           <h3 className="show__title">{show.title}</h3>
         </a>
 
-        <div className="show__playcontrols">
+        {/* <div className="show__playcontrols">
           {currentPlaying === show.displayNumber ? (
             <Bars />
           ) : (
@@ -52,7 +47,7 @@ export default class Show extends React.Component {
               <FaPlay />
             </button>
           )}
-        </div>
+        </div> */}
       </div>
     );
   }

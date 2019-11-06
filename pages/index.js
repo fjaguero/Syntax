@@ -82,10 +82,10 @@ export default withRouter(
                 currentPlaying={currentPlaying}
                 setCurrentPlaying={this.setCurrentPlaying}
               />
-              <ShowNotes
+              {/* <ShowNotes
                 show={show}
                 setCurrentPlaying={this.setCurrentPlaying}
-              />
+              /> */}
             </main>
           </div>
         </Page>
