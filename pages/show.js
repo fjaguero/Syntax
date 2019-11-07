@@ -10,36 +10,31 @@ import Page from "../components/Page";
 import getBaseURL from "../lib/getBaseURL";
 
 export default withRouter(
-  class IndexPage extends React.Component {
+  class ShowPage extends React.Component {
     static propTypes = {
       router: PropTypes.object.isRequired,
-      shows: PropTypes.array.isRequired,
       baseURL: PropTypes.string.isRequired
     };
 
-    constructor(props) {
+    constructor() {
       super();
-      const currentShow =
-        props.router.query.number || props.shows[0].displayNumber;
 
       this.state = {
-        currentShow,
-        currentPlaying: currentShow
+        show: undefined
       };
     }
 
     static async getInitialProps({ req }) {
       const baseURL = getBaseURL(req);
-      const { data: shows } = await axios.get(`${baseURL}/api/shows`);
-      return { shows, baseURL };
-    }
 
-    static getDerivedStateFromProps(nextProps, prevState) {
-      const { query } = nextProps.router;
-      if (query.number) {
-        return { ...prevState, currentShow: query.number };
-      }
-      return prevState;
+      console.log("number here!");
+      console.log(req);
+
+      const { data: show } = await axios.get(
+        `${baseURL}/api/shows/${req.params.number}`
+      );
+
+      return { baseURL, show };
     }
 
     setCurrentPlaying = currentPlaying => {
@@ -48,16 +43,12 @@ export default withRouter(
     };
 
     render() {
-      const { shows = [], baseURL } = this.props;
-      const { currentShow, currentPlaying } = this.state;
-      // Currently Shown shownotes
-      const show =
-        shows.find(showItem => showItem.displayNumber === currentShow) ||
-        shows[0];
-      // Currently Playing
-      const current =
-        shows.find(showItem => showItem.displayNumber === currentPlaying) ||
-        shows[0];
+      const { baseURL, show } = this.props;
+
+      console.log("show FE");
+      console.log(show);
+
+      if (!show) return <p>hola</p>;
 
       return (
         <Page>
@@ -77,16 +68,7 @@ export default withRouter(
             </div>
             <main className="show-wrap" id="main" tabIndex="-1">
               {/* <Player show={current} /> */}
-              <ShowList
-                shows={shows}
-                currentShow={currentShow}
-                currentPlaying={currentPlaying}
-                setCurrentPlaying={this.setCurrentPlaying}
-              />
-              {/* <ShowNotes
-                show={show}
-                setCurrentPlaying={this.setCurrentPlaying}
-              /> */}
+              <ShowNotes show={show} />
             </main>
           </div>
         </Page>

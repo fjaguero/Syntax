@@ -1,5 +1,5 @@
 ---
-number: 2
+number: 002
 title: Hasty Treat - Developing Better Habits
 date: 1569848400962
 url: https://traffic.libsyn.com/syntax/Syntax183.mp3

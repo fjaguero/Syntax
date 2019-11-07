@@ -4,6 +4,7 @@ import slug from "speakingurl";
 import Router from "next/router";
 import { FaPlay } from "react-icons/fa";
 import Bars from "./bars";
+import Link from "next/link";
 
 export default class Show extends React.Component {
   static propTypes = {
@@ -16,23 +17,25 @@ export default class Show extends React.Component {
   changeURL = (e, show) => {
     e.preventDefault();
     const { href } = e.currentTarget;
-    Router.push(`/?number=${show.displayNumber}`, href, { shallow: true });
+    Router.push(`/?number=${show.displayNumber}`, href, { shallow: false });
   };
 
   render() {
     const { show, currentPlaying, currentShow, setCurrentPlaying } = this.props;
+
     return (
       <div className="show">
-        <a
+        <img src={show.image} />
+        <Link
           className="show__link"
           href={`/show/${show.displayNumber}/${slug(show.title)}`}
-          onClick={e => this.changeURL(e, show)}
+          // onClick={e => this.changeURL(e, show)}
         >
           <p className="show__displayNumber">
             Episode {show.displayNumber} -- Product Manager
+            <h3 className="show__title">{show.title}</h3>
           </p>
-          <h3 className="show__title">{show.title}</h3>
-        </a>
+        </Link>
 
         {/* <div className="show__playcontrols">
           {currentPlaying === show.displayNumber ? (

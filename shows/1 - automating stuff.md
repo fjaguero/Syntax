@@ -1,8 +1,9 @@
 ---
-number: 1
+number: 001
 title: Building A Team From Scratch with Splash’s Guillermo de la Puente
 date: 1569243600529
 url: https://audioboom.com/posts/7265132.mp3
+image: /static/shows/001.png
 ---
 
 In this Hasty Treat, Scott and Wes are talking about automation — apps, workflows, resources, and more!

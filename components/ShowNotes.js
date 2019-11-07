@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const ShowNotes = ({ show, setCurrentPlaying }) => {
   useEffect(() => {
-    document.querySelector(".showNotes").scrollTop = 0;
+    document.querySelector(".page").scrollTop = 0;
   });
 
   return (
